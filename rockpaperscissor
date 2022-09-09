@@ -1,0 +1,84 @@
+import java.util.*;
+
+class rock_paper_scissors
+{
+     void main()
+    
+ {
+         Scanner ob =new Scanner(System.in);
+        
+           while(true){
+           String[] rps = {"r", "p", "s"};
+           String computermove = rps[new Random().nextInt(rps.length)];
+        
+           String playermove;
+        
+           while(true){
+       
+           System.out.println("Please enter your move \n r-Rock  p-Paper \n s-Scissors");
+           playermove = ob.nextLine();
+        
+           if (playermove.equals("r") || playermove.equals("p") || playermove.equals("s"))
+           break;
+          }
+        
+    
+        { 
+       System.out.println("Computer played :" +computermove);
+    
+        if (playermove.equals(computermove))
+        {
+              System.out.println("The game was a tie !");
+        }
+        //ROCK
+        else if(playermove.equals("r"))
+        {
+             if(computermove.equals("p"))
+             {
+                 System.out.println("You lose !");
+             }
+             else if (computermove.equals("s"))
+             {
+                 System.out.println("You win !");
+             }
+        }
+        
+        //PAPER
+        else if(playermove.equals("p"))
+        {
+             if(computermove.equals("s"))
+             {
+                 System.out.println("You lose !");
+             }
+             else if (computermove.equals("r"))
+             {
+                 System.out.println("You win !");
+             }
+        }
+        
+        //SCISSOR
+        else if(playermove.equals("s"))
+        {
+             if(computermove.equals("r"))
+             {
+                 System.out.println("You lose !");
+             }
+             else if (computermove.equals("p"))
+             {
+                 System.out.println("You win !");
+             }
+        }
+            
+        
+       System.out.println("Play again ?  (y/n)");
+            String playagain = ob.nextLine();
+    
+              if (!playagain.equals("y"))
+              {
+              break;
+             }
+     }
+    }
+  }
+}
+
